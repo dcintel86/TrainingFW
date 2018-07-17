@@ -112,6 +112,8 @@
 						<configuration>
 							<source>1.7</source>
 							<target>1.7</target>
+							<fork>true</fork>
+							<executable>C:\Program Files\Java\jdk1.8.0_171\bin\javac</executable>
 							<compilerArgument>-Xlint:unchecked</compilerArgument>
 						</configuration>
 						<version>3.5.1</version>
