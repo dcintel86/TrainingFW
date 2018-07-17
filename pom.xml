@@ -1,0 +1,163 @@
+<project 
+	xmlns="http://maven.apache.org/POM/4.0.0" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+	<groupId>org.o7planning</groupId>
+	<artifactId>auto_new</artifactId>
+	<version>0.0.1-SNAPSHOT</version>
+
+	<name>Automation</name>
+	<description>Selenium and Appium Automation</description>
+	<url>http://www.tmasolutions.com</url>
+	<properties>
+		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+		<maven.build.timestamp.format>yyyy_MM_dd-HHmm</maven.build.timestamp.format>
+	</properties>
+	<dependencies>
+		<!-- Selenium dependence  -->
+		<!-- https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java -->
+		<dependency>
+			<groupId>org.seleniumhq.selenium</groupId>
+			<artifactId>selenium-java</artifactId>
+			<version>3.11.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.testng/testng -->
+		<dependency>
+			<groupId>org.testng</groupId>
+			<artifactId>testng</artifactId>
+			<version>6.14.2</version>
+			<scope>test</scope>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/log4j/log4j -->
+		<dependency>
+			<groupId>log4j</groupId>
+			<artifactId>log4j</artifactId>
+			<version>1.2.17</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-api -->
+		<dependency>
+			<groupId>org.apache.logging.log4j</groupId>
+			<artifactId>log4j-api</artifactId>
+			<version>2.11.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.logging.log4j/log4j-core -->
+		<dependency>
+		    <groupId>org.apache.logging.log4j</groupId>
+		    <artifactId>log4j-core</artifactId>
+		    <version>2.11.0</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/io.appium/java-client -->
+		<dependency>
+			<groupId>io.appium</groupId>
+			<artifactId>java-client</artifactId>
+			<version>5.0.4</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/net.sourceforge.jexcelapi/jxl -->
+		<dependency>
+		    <groupId>net.sourceforge.jexcelapi</groupId>
+		    <artifactId>jxl</artifactId>
+		    <version>2.6.12</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.apache.poi/poi -->
+		<dependency>
+		    <groupId>org.apache.poi</groupId>
+		    <artifactId>poi</artifactId>
+		    <version>3.17</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/org.json/json -->
+		<dependency>
+		    <groupId>org.json</groupId>
+		    <artifactId>json</artifactId>
+		    <version>20180130</version>
+		</dependency>
+		<!-- Cucumber Libs -->
+		<dependency>
+		    <groupId>info.cukes</groupId>
+		    <artifactId>cucumber-java</artifactId>
+		    <version>1.2.5</version>
+		    <scope>test</scope>
+		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/info.cukes/cucumber-testng -->
+		<dependency>
+		    <groupId>info.cukes</groupId>
+		    <artifactId>cucumber-testng</artifactId>
+		    <version>1.2.5</version>
+		</dependency>
+		<!-- https://mvnrepository.com/artifact/com.jayway.restassured/rest-assured -->
+		<dependency>
+		    <groupId>com.jayway.restassured</groupId>
+		    <artifactId>rest-assured</artifactId>
+		    <version>2.9.0</version>
+		    <scope>test</scope>
+		</dependency>
+		
+		
+		
+		
+	</dependencies>
+	
+	<!-- Plugins -->
+	<profiles>
+		<profile>
+			<id>selenium-tests</id>
+			<activation>
+				<activeByDefault>true</activeByDefault>
+			</activation>
+			<build>
+				<plugins>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-compiler-plugin</artifactId>
+						<configuration>
+							<source>1.7</source>
+							<target>1.7</target>
+							<compilerArgument>-Xlint:unchecked</compilerArgument>
+						</configuration>
+						<version>3.5.1</version>
+					</plugin>
+					<plugin>
+						<groupId>org.apache.maven.plugins</groupId>
+						<artifactId>maven-failsafe-plugin</artifactId>
+						<version>2.21.0</version>
+						<configuration>
+							<systemPropertyVariables>
+								<browser>${browser}</browser>
+								<version>${version}</version>
+								<remote>${remote}</remote>
+								<dataFile>${excelFile}</dataFile>
+								<dataSheet>${sheet}</dataSheet>
+								<seleniumHub>${seleniumHub}</seleniumHub>
+								<threadCnt>${threads}</threadCnt>
+								<desiredBrowserVersion>${browserVersion}</desiredBrowserVersion>
+								<reportDir>${project.basedir}/report/${suite}/${browser}_${maven.build.timestamp}</reportDir>
+								<webdriver.chrome.driver>${project.basedir}/selenium_driver/chromedriver.exe</webdriver.chrome.driver>
+								<webdriver.gecko.driver>${project.basedir}/selenium_driver/geckodriver.exe</webdriver.gecko.driver>
+							</systemPropertyVariables>
+							<!-- <reportsDirectory>${project.basedir}/report/${suite}/${browser}_${maven.build.timestamp}/report</reportsDirectory> -->
+							<suiteXmlFiles>
+								<suiteXmlFile>suites/${suite}.xml</suiteXmlFile>
+							</suiteXmlFiles>
+						</configuration>
+						<executions>
+							<execution>
+								<id>integration-test</id>
+								<phase>integration-test</phase>
+								<goals>
+									<goal>integration-test</goal>
+								</goals>
+							</execution>
+							<execution>
+								<id>verify</id>
+								<phase>verify</phase>
+								<goals>
+									<goal>verify</goal>
+								</goals>
+							</execution>
+						</executions>
+					</plugin>
+				</plugins>
+			</build>
+		</profile>
+	</profiles>
+</project>

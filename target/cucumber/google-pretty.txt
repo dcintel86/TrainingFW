@@ -1,0 +1,16 @@
+@webmail
+Feature: Login Webmail
+  Login TMA Webmail
+
+  Scenario: Valid Login                                           [90m# LoginTMAWebmail.feature:5[0m
+    [32mGiven [0m[32mI open browser to "[0m[32m[1mhttps://webmail.tma.com.vn/[0m[32m"[0m         [90m# stepDefination4webmail.i_open_browser_to(String)[0m
+    [32mWhen [0m[32mlogin with user and password are "[0m[32m[1mdmhuy123[0m[32m" and "[0m[32m[1m123456[0m[32m"[0m [90m# stepDefination4webmail.login_with_user_and_password_are_and(String,String)[0m
+    [31mThen [0m[31mI should login successfully[0m                              [90m# stepDefination4webmail.i_should_login_successfully()[0m
+      [31mjava.lang.AssertionError: expected [true] but found [false]
+      	at org.testng.Assert.fail(Assert.java:96)
+      	at org.testng.Assert.failNotEquals(Assert.java:776)
+      	at org.testng.Assert.assertTrue(Assert.java:44)
+      	at org.testng.Assert.assertTrue(Assert.java:54)
+      	at bdd.steps.webmail.stepDefination4webmail.i_should_login_successfully(stepDefination4webmail.java:47)
+      	at ✽.Then I should login successfully(LoginTMAWebmail.feature:8)
+      [0m

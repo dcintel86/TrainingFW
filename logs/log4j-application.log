@@ -1,0 +1,6 @@
+2018-07-06 11:41:58 INFO  DefaultHttpClient:623 - I/O exception (java.net.SocketException) caught when connecting to {}->http://restcountries.eu:8080: Network is unreachable: connect
+2018-07-06 11:41:58 INFO  DefaultHttpClient:631 - Retrying connect to {}->http://restcountries.eu:8080
+2018-07-06 11:42:40 INFO  DefaultHttpClient:623 - I/O exception (java.net.SocketException) caught when connecting to {}->http://restcountries.eu:8080: Network is unreachable: connect
+2018-07-06 11:42:40 INFO  DefaultHttpClient:631 - Retrying connect to {}->http://restcountries.eu:8080
+2018-07-06 11:43:22 INFO  DefaultHttpClient:623 - I/O exception (java.net.SocketException) caught when connecting to {}->http://restcountries.eu:8080: Network is unreachable: connect
+2018-07-06 11:43:22 INFO  DefaultHttpClient:631 - Retrying connect to {}->http://restcountries.eu:8080

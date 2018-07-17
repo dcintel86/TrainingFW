@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
+<suite name="demo suite" parallel="methods" thread-count="1" data-provider-thread-count="1">
+	<listeners>
+		<listener class-name="automationCore.TestReport"/>
+	</listeners>
+	<test name="demo suite">
+		<parameter name="waitTime" value="20"/>
+		<parameter name="yourname" value="tdcuong"/>
+		<parameter name="password" value="12345678x#X"/>
+		<classes>
+ 			<class name= "first_test.Session1"></class>
+			<!-- <class name= "first_test.Session1Review"></class> -->
+			 <!-- <class name= "pageObjects.LoginWithPageFactory_TC_Review"></class>
+			<class name= "pageObjects.Login_TC_Failed"></class> 
+			<class name= "session3_ExceptionHandling_Wait_SpecialElement.Alert_Handling_Implicit_ExplicitWait"></class>
+			<class name= "session3_ExceptionHandling_Wait_SpecialElement.Alert_Handling_TryCatch"></class>
+			<class name= "session3_ExceptionHandling_Wait_SpecialElement.Alert_Handling"></class> -->
+			
+		</classes>
+	</test>
+</suite>

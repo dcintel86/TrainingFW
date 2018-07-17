@@ -1,0 +1,103 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 7341760484,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefination4webmail.beforeScenario()"
+            }
+          }
+        ],
+        "line": 5,
+        "name": "Valid Login",
+        "description": "",
+        "id": "login-webmail;valid-login",
+        "after": [
+          {
+            "result": {
+              "duration": 1027414722,
+              "status": "passed"
+            },
+            "match": {
+              "location": "stepDefination4webmail.afterScenario()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 1263981421,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "I open browser to \"https://webmail.tma.com.vn/\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "https://webmail.tma.com.vn/",
+                  "offset": 19
+                }
+              ],
+              "location": "stepDefination4webmail.i_open_browser_to(String)"
+            },
+            "keyword": "Given "
+          },
+          {
+            "result": {
+              "duration": 637498169,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "login with user and password are \"dmhuy123\" and \"123456\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "dmhuy123",
+                  "offset": 34
+                },
+                {
+                  "val": "123456",
+                  "offset": 49
+                }
+              ],
+              "location": "stepDefination4webmail.login_with_user_and_password_are_and(String,String)"
+            },
+            "keyword": "When "
+          },
+          {
+            "result": {
+              "duration": 32652759,
+              "error_message": "java.lang.AssertionError: expected [true] but found [false]\r\n\tat org.testng.Assert.fail(Assert.java:96)\r\n\tat org.testng.Assert.failNotEquals(Assert.java:776)\r\n\tat org.testng.Assert.assertTrue(Assert.java:44)\r\n\tat org.testng.Assert.assertTrue(Assert.java:54)\r\n\tat bdd.steps.webmail.stepDefination4webmail.i_should_login_successfully(stepDefination4webmail.java:47)\r\n\tat ✽.Then I should login successfully(LoginTMAWebmail.feature:8)\r\n",
+              "status": "failed"
+            },
+            "line": 8,
+            "name": "I should login successfully",
+            "match": {
+              "location": "stepDefination4webmail.i_should_login_successfully()"
+            },
+            "keyword": "Then "
+          }
+        ]
+      }
+    ],
+    "name": "Login Webmail",
+    "description": "Login TMA Webmail",
+    "id": "login-webmail",
+    "keyword": "Feature",
+    "uri": "LoginTMAWebmail.feature",
+    "tags": [
+      {
+        "line": 1,
+        "name": "@webmail"
+      }
+    ]
+  }
+]

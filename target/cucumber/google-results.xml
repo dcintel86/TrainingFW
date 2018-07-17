@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<testsuite failures="1" name="cucumber.runtime.formatter.JUnitFormatter" skipped="0" tests="1" time="10.303308">
+<testcase classname="Login Webmail" name="Valid Login" time="10.303308">
+<failure message="java.lang.AssertionError: expected [true] but found [false]&#13;&#10;&#9;at org.testng.Assert.fail(Assert.java:96)&#13;&#10;&#9;at org.testng.Assert.failNotEquals(Assert.java:776)&#13;&#10;&#9;at org.testng.Assert.assertTrue(Assert.java:44)&#13;&#10;&#9;at org.testng.Assert.assertTrue(Assert.java:54)&#13;&#10;&#9;at bdd.steps.webmail.stepDefination4webmail.i_should_login_successfully(stepDefination4webmail.java:47)&#13;&#10;&#9;at ✽.Then I should login successfully(LoginTMAWebmail.feature:8)&#13;&#10;"><![CDATA[Given I open browser to "https://webmail.tma.com.vn/".......................passed
+When login with user and password are "dmhuy123" and "123456"...............passed
+Then I should login successfully............................................failed
+
+StackTrace:
+java.lang.AssertionError: expected [true] but found [false]
+	at org.testng.Assert.fail(Assert.java:96)
+	at org.testng.Assert.failNotEquals(Assert.java:776)
+	at org.testng.Assert.assertTrue(Assert.java:44)
+	at org.testng.Assert.assertTrue(Assert.java:54)
+	at bdd.steps.webmail.stepDefination4webmail.i_should_login_successfully(stepDefination4webmail.java:47)
+	at ✽.Then I should login successfully(LoginTMAWebmail.feature:8)
+]]></failure>
+</testcase>
+</testsuite>
